@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: jenkins_test
+logging:
+  file:
+    name: logs/server.log
+

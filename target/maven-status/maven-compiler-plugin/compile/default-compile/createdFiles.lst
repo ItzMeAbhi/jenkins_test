@@ -1,0 +1,4 @@
+com\icici\service\SchedulerTestClass.class
+com\icici\controller\TestController.class
+com\icici\JenkinsCICDTestAppp.class
+com\icici\model\ItemsModel.class

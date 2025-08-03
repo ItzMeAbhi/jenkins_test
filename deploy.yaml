@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-cicd-test-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins-cicd-test
+  template:
+    metadata:
+      labels:
+        app: jenkins-cicd-test
+    spec:
+      containers:
+        - name: jenkins-cicd-test
+          image: gcr.io/gcpanthos-449411/jenkins-cicd-test:$COMMIT_SHA
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"
